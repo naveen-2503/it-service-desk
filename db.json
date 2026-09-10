@@ -1,0 +1,263 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "fullName": "Alice Admin",
+      "email": "admin@company.com",
+      "password": "admin123",
+      "phone": "9990001111",
+      "department": "IT",
+      "role": "Admin",
+      "status": "Active",
+      "createdDate": "2026-01-10"
+    },
+    {
+      "id": "u2",
+      "fullName": "Sam Support",
+      "email": "agent@company.com",
+      "password": "agent123",
+      "phone": "9990002222",
+      "department": "IT ",
+      "role": "Support Agent",
+      "status": "Active",
+      "createdDate": "2026-01-12"
+    },
+    {
+      "id": "u3",
+      "fullName": "Emma Employee",
+      "email": "employee@company.com",
+      "password": "emp123",
+      "phone": "9990003333",
+      "department": "Sales",
+      "role": "Employee",
+      "status": "Active",
+      "createdDate": "2026-01-15"
+    },
+    {
+      "fullName": "Robin",
+      "email": "robin@company.com",
+      "password": "robin123",
+      "phone": "9990002222",
+      "department": "IT Support",
+      "role": "Support Agent",
+      "status": "Active",
+      "createdDate": "2026-09-10",
+      "id": "UU9B9ndo93I"
+    }
+  ],
+  "categories": [
+    {
+      "id": "c1",
+      "name": "Hardware",
+      "description": "Physical equipment issues",
+      "status": "Active"
+    },
+    {
+      "id": "c2",
+      "name": "Software",
+      "description": "Application and OS issues",
+      "status": "Active"
+    },
+    {
+      "id": "c3",
+      "name": "Network",
+      "description": "Connectivity issues",
+      "status": "Active"
+    },
+    {
+      "id": "c4",
+      "name": "Email",
+      "description": "Email and mail server issues",
+      "status": "Active"
+    },
+    {
+      "id": "c5",
+      "name": "Security",
+      "description": "Access and security and safety concerns ",
+      "status": "Active"
+    },
+    {
+      "id": "c6",
+      "name": "Access Request",
+      "description": "New access or permission requests",
+      "status": "Active"
+    },
+    {
+      "name": "Operations",
+      "description": "Operational issues fpor application",
+      "status": "Active",
+      "id": "ZO1wwMIFN_4"
+    },
+    {
+      "name": "Admin",
+      "description": "Admin related issues",
+      "status": "Active",
+      "id": "lvtqN5v9wXU"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "t1",
+      "subject": "Unable to connect to office Wi-Fi",
+      "description": "Laptop cannot connect to the corporate Wi-Fi since this morning.",
+      "createdBy": "u3",
+      "assignedAgent": "u2",
+      "category": "c3",
+      "priority": "High",
+      "status": "Resolved",
+      "createdDate": "2026-08-20T10:30:00Z",
+      "updatedDate": "2026-09-09T10:06:10.264Z",
+      "dueDate": "2026-08-22T18:00:00Z",
+      "resolution": "it got resolved",
+      "resolutionDate": "2026-09-09T10:06:10.264Z",
+      "preferredContactMethod": "Email"
+    },
+    {
+      "id": "t2",
+      "subject": "Laptop screen flickering",
+      "description": "Screen flickers intermittently, especially on battery power.",
+      "createdBy": "u3",
+      "assignedAgent": null,
+      "category": "c1",
+      "priority": "Medium",
+      "status": "Open",
+      "createdDate": "2026-08-19T09:00:00Z",
+      "updatedDate": "2026-09-10T04:10:19.890Z",
+      "dueDate": "",
+      "resolution": "",
+      "resolutionDate": "",
+      "preferredContactMethod": "Chat"
+    },
+    {
+      "id": "t3",
+      "subject": "Cannot access shared drive",
+      "description": "Getting permission denied when accessing the finance shared drive.",
+      "createdBy": "u3",
+      "assignedAgent": "u2",
+      "category": "c5",
+      "priority": "Critical",
+      "status": "Assigned",
+      "createdDate": "2026-08-18T14:20:00Z",
+      "updatedDate": "2026-08-18T15:00:00Z",
+      "dueDate": "2026-08-19T14:20:00Z",
+      "resolution": "",
+      "resolutionDate": "",
+      "preferredContactMethod": "Email"
+    },
+    {
+      "id": "t4",
+      "subject": "Outlook crashing on startup",
+      "description": "Outlook crashes immediately every time it's opened.",
+      "createdBy": "u3",
+      "assignedAgent": "u2",
+      "category": "c4",
+      "priority": "High",
+      "status": "Resolved",
+      "createdDate": "2026-08-15T08:45:00Z",
+      "updatedDate": "2026-08-16T10:00:00Z",
+      "dueDate": "2026-08-17T08:45:00Z",
+      "resolution": "Repaired Outlook profile and cleared cache.",
+      "resolutionDate": "2026-08-16T10:00:00Z",
+      "preferredContactMethod": "Phone"
+    },
+    {
+      "id": "t5",
+      "subject": "Need access to design tools",
+      "description": "Requesting access to the Figma workspace for the new project.",
+      "createdBy": "u3",
+      "assignedAgent": null,
+      "category": "c6",
+      "priority": "Low",
+      "status": "Closed",
+      "createdDate": "2026-08-10T11:00:00Z",
+      "updatedDate": "2026-08-11T09:00:00Z",
+      "dueDate": "",
+      "resolution": "Access granted.",
+      "resolutionDate": "2026-08-11T09:00:00Z",
+      "preferredContactMethod": "Email"
+    },
+    {
+      "id": "t6",
+      "subject": "Printer not responding",
+      "description": "3rd floor printer is not responding to print jobs.",
+      "createdBy": "u3",
+      "assignedAgent": "u2",
+      "category": "c1",
+      "priority": "Medium",
+      "status": "Pending",
+      "createdDate": "2026-08-21T13:00:00Z",
+      "updatedDate": "2026-08-21T13:30:00Z",
+      "dueDate": "2026-08-23T13:00:00Z",
+      "resolution": "",
+      "resolutionDate": "",
+      "preferredContactMethod": "Chat"
+    },
+    {
+      "subject": "Issue",
+      "description": "879rhkl4 noy eruklon vrh",
+      "category": "c2",
+      "priority": "Low",
+      "preferredContactMethod": "Email",
+      "createdBy": "u3",
+      "assignedAgent": null,
+      "status": "Open",
+      "createdDate": "2026-09-09T09:42:21.044Z",
+      "updatedDate": "2026-09-09T10:11:06.087Z",
+      "dueDate": "",
+      "resolution": "",
+      "resolutionDate": "",
+      "id": "lcvXtrTjFOw"
+    },
+    {
+      "subject": "Email issue",
+      "description": "Not able to sent mail",
+      "category": "c4",
+      "priority": "Medium",
+      "preferredContactMethod": "Phone",
+      "createdBy": "u3",
+      "assignedAgent": null,
+      "status": "Open",
+      "createdDate": "2026-09-10T05:16:55.482Z",
+      "updatedDate": "2026-09-10T05:16:55.482Z",
+      "dueDate": "",
+      "resolution": "",
+      "resolutionDate": "",
+      "id": "hpim7HWer5k"
+    },
+    {
+      "subject": "software issue",
+      "description": "issue in software",
+      "category": "c2",
+      "priority": "Medium",
+      "preferredContactMethod": "Chat",
+      "createdBy": "u3",
+      "assignedAgent": "u2",
+      "status": "Assigned",
+      "createdDate": "2026-09-10T05:17:31.545Z",
+      "updatedDate": "2026-09-10T05:19:01.868Z",
+      "dueDate": "",
+      "resolution": "",
+      "resolutionDate": "",
+      "id": "UYZHhuKcNZ0"
+    }
+  ],
+  "comments": [
+    {
+      "id": "cm1",
+      "ticketId": "t1",
+      "userId": null,
+      "comment": "Investigating the issue, will update shortly.",
+      "createdDate": "2026-08-20",
+      "createdTime": "12:15 PM"
+    },
+    {
+      "ticketId": "t1",
+      "userId": "u1",
+      "comment": "its working",
+      "createdDate": "2026-09-09",
+      "createdTime": "03:35 PM",
+      "id": "YhiLgOM6elQ"
+    }
+  ]
+ 
+}
