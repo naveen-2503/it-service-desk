@@ -52,7 +52,7 @@ export default function CategoryForm({ initial, isEdit, onSubmit, onCancel }: Ca
           type="text"
           value={form.name}
           onChange={(e) => update('name', e.target.value)}
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+          className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
         />
       </FormField>
 
@@ -61,7 +61,7 @@ export default function CategoryForm({ initial, isEdit, onSubmit, onCancel }: Ca
           value={form.description}
           onChange={(e) => update('description', e.target.value)}
           rows={3}
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+          className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
         />
       </FormField>
 
@@ -76,7 +76,7 @@ export default function CategoryForm({ initial, isEdit, onSubmit, onCancel }: Ca
         <button
           type="button"
           onClick={onCancel}
-          className="px-5 py-2 rounded text-sm font-medium border border-gray-300 hover:bg-gray-50"
+          className="px-5 py-2 rounded text-sm font-medium border border-border hover:bg-surface-sunken"
         >
           Cancel
         </button>

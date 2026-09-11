@@ -42,22 +42,22 @@ export default function CommentSection({ ticketId, currentUser, userName, canCom
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
-      <h2 className="font-semibold text-gray-800 mb-4">Comments</h2>
+    <div className="bg-surface rounded-lg shadow-sm border border-border p-5">
+      <h2 className="font-semibold text-ink mb-4">Comments</h2>
 
       {loading ? (
-        <p className="text-sm text-gray-500">Loading comments...</p>
+        <p className="text-sm text-ink-muted">Loading comments...</p>
       ) : comments.length === 0 ? (
-        <p className="text-sm text-gray-500 mb-4">No comments yet.</p>
+        <p className="text-sm text-ink-muted mb-4">No comments yet.</p>
       ) : (
         <ul className="space-y-3 mb-4">
           {comments.map((c) => (
-            <li key={c.id} className="border-b border-gray-100 pb-3 last:border-0">
-              <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
-                <span className="font-medium text-gray-700">{userName(c.userId)}</span>
+            <li key={c.id} className="border-b border-border pb-3 last:border-0">
+              <div className="flex items-center justify-between text-xs text-ink-faint mb-1">
+                <span className="font-medium text-ink-muted">{userName(c.userId)}</span>
                 <span>{c.createdDate} · {c.createdTime}</span>
               </div>
-              <p className="text-sm text-gray-700">{c.comment}</p>
+              <p className="text-sm text-ink-muted">{c.comment}</p>
             </li>
           ))}
         </ul>
@@ -70,12 +70,12 @@ export default function CommentSection({ ticketId, currentUser, userName, canCom
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Add a comment..."
-            className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm"
+            className="flex-1 border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           />
           <button
             type="submit"
             disabled={posting || !text.trim()}
-            className="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
+            className="bg-brand-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-brand-700 disabled:opacity-50"
           >
             {posting ? 'Posting...' : 'Post'}
           </button>

@@ -71,7 +71,7 @@ export default function EditTicketPage() {
 
   if (!user) return null
 
-  if (loading) return <p className="text-gray-500">Loading ticket...</p>
+  if (loading) return <p className="text-ink-muted">Loading ticket...</p>
 
   if (loadError || !ticket || !form) {
     return (
@@ -110,7 +110,7 @@ export default function EditTicketPage() {
       </button>
       <h1 className="text-2xl font-bold mb-6">Edit Ticket</h1>
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 space-y-4">
+      <form onSubmit={handleSubmit} className="bg-surface rounded-lg shadow-sm border border-border p-6 space-y-4">
         {submitError && (
           <div className="bg-red-50 text-red-700 text-sm px-3 py-2 rounded border border-red-200">
             {submitError}
@@ -122,7 +122,7 @@ export default function EditTicketPage() {
             type="text"
             value={form.subject}
             onChange={(e) => update('subject', e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           />
         </FormField>
 
@@ -131,7 +131,7 @@ export default function EditTicketPage() {
             value={form.description}
             onChange={(e) => update('description', e.target.value)}
             rows={4}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           />
         </FormField>
 
@@ -139,7 +139,7 @@ export default function EditTicketPage() {
           <select
             value={form.category}
             onChange={(e) => update('category', e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           >
             <option value="">Select a category</option>
             {categories.map((c) => (
@@ -152,7 +152,7 @@ export default function EditTicketPage() {
           <select
             value={form.priority}
             onChange={(e) => update('priority', e.target.value as TicketPriority)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           >
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
@@ -165,7 +165,7 @@ export default function EditTicketPage() {
           <select
             value={form.preferredContactMethod}
             onChange={(e) => update('preferredContactMethod', e.target.value as ContactMethod)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           >
             <option value="Email">Email</option>
             <option value="Phone">Phone</option>
@@ -184,7 +184,7 @@ export default function EditTicketPage() {
           <button
             type="button"
             onClick={() => navigate(`/tickets/${ticket.id}`)}
-            className="px-5 py-2 rounded text-sm font-medium border border-gray-300 hover:bg-gray-50"
+            className="px-5 py-2 rounded text-sm font-medium border border-border hover:bg-surface-sunken"
           >
             Cancel
           </button>

@@ -2,6 +2,7 @@ import { useAuth } from '../../hooks/useAuth'
 import { useDashboardStats } from '../../hooks/useDashboardStats'
 import StatCard from '../../components/Dashboard/StatCard'
 import type { Ticket } from '../../types/ticket'
+import PageHeader from '../../components/common/PageHeader'
 import {
   Ticket as TicketIcon,
   Inbox,
@@ -30,11 +31,10 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-ink mb-1">Dashboard</h1>
-      <p className="text-ink-muted mb-6">Welcome back, {user.fullName}.</p>
+     <PageHeader title="Dashboard" description={`Welcome back, ${user.fullName}.`} />
 
       {user.role === 'Admin' && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <StatCard label="Total Tickets" value={tickets.length} icon={TicketIcon} />
           <StatCard label="Open" value={countBy(tickets, 'Open')} icon={Inbox} />
           <StatCard label="Assigned" value={countBy(tickets, 'Assigned')} icon={UserCheck} />
@@ -58,7 +58,7 @@ export default function DashboardPage() {
       )}
 
       {user.role === 'Support Agent' && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <StatCard label="My Assigned Tickets" value={tickets.length} icon={TicketIcon} />
           <StatCard label="New" value={countBy(tickets, 'Assigned')} icon={Inbox} />
           <StatCard label="In Progress" value={countBy(tickets, 'In Progress')} icon={Clock} />
@@ -74,7 +74,7 @@ export default function DashboardPage() {
       )}
 
       {user.role === 'Employee' && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <StatCard label="My Total Tickets" value={tickets.length} icon={TicketIcon} />
           <StatCard label="Open" value={countBy(tickets, 'Open')} icon={Inbox} />
           <StatCard label="In Progress" value={countBy(tickets, 'In Progress')} icon={Clock} />

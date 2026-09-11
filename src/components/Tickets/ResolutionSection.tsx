@@ -33,14 +33,14 @@ export default function ResolutionSection({ ticket, canResolve, onResolve }: Res
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
-      <h2 className="font-semibold text-gray-800 mb-4">Resolution</h2>
+    <div className="bg-surface rounded-lg shadow-sm border border-border p-5">
+      <h2 className="font-semibold text-ink mb-4">Resolution</h2>
 
       {ticket.resolution && (
         <div className="bg-green-50 border border-green-200 rounded p-3 mb-4">
-          <p className="text-sm text-gray-700">{ticket.resolution}</p>
+          <p className="text-sm text-ink-muted">{ticket.resolution}</p>
           {ticket.resolutionDate && (
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-ink-faint mt-1">
               Resolved on {new Date(ticket.resolutionDate).toLocaleString()}
             </p>
           )}
@@ -55,7 +55,7 @@ export default function ResolutionSection({ ticket, canResolve, onResolve }: Res
             onChange={(e) => setText(e.target.value)}
             rows={3}
             placeholder="Describe how this issue was resolved..."
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           />
           <button
             type="submit"
@@ -68,7 +68,7 @@ export default function ResolutionSection({ ticket, canResolve, onResolve }: Res
       )}
 
       {!ticket.resolution && !canResolve && (
-        <p className="text-sm text-gray-500">No resolution yet.</p>
+        <p className="text-sm text-ink-faint">No resolution yet.</p>
       )}
     </div>
   )

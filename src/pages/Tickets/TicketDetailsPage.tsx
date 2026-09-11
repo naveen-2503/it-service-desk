@@ -146,7 +146,7 @@ export default function TicketDetailsPage() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-border p-5 grid grid-cols-2 sm:grid-cols-4 gap-5">
+      <div className="bg-surface rounded-xl shadow-sm border border-border p-5 grid grid-cols-2 sm:grid-cols-4 gap-5">
         <div>
           <p className="text-xs text-ink-faint mb-1">Status</p>
           <Badge label={ticket.status} tone={statusTone(ticket.status)} />
@@ -163,13 +163,13 @@ export default function TicketDetailsPage() {
         <DetailField label="Due Date" value={ticket.dueDate ? new Date(ticket.dueDate).toLocaleDateString() : '—'} />
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-border p-5">
+      <div className="bg-surface rounded-xl shadow-sm border border-border p-5">
         <h2 className="font-semibold text-ink mb-2">Description</h2>
         <p className="text-sm text-ink-muted whitespace-pre-wrap">{ticket.description}</p>
       </div>
 
       {statusOptions.length > 0 && (
-        <div className="bg-white rounded-xl shadow-sm border border-border p-5">
+        <div className="bg-surface rounded-xl shadow-sm border border-border p-5">
           <h2 className="font-semibold text-ink mb-3">Update Status</h2>
           <div className="flex flex-wrap gap-2">
             {statusOptions.map((s) => (

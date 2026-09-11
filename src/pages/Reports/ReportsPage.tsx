@@ -17,10 +17,11 @@ import { BarChart3, TrendingUp, Users, Clock } from 'lucide-react'
 import { useReportsData } from '../../hooks/useReportsData'
 import StatCard from '../../components/Dashboard/StatCard'
 import { STATUS_COLORS, PRIORITY_COLORS } from '../../utils/chartColors'
+import PageHeader from '../../components/common/PageHeader'
 
 function ChartCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-border p-5">
+    <div className="bg-surface rounded-xl shadow-sm border border-border p-5">
       <h2 className="font-semibold text-ink mb-4">{title}</h2>
       {children}
     </div>
@@ -38,12 +39,10 @@ export default function ReportsPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-ink mb-1">Reports</h1>
-        <p className="text-ink-muted">Ticket analytics and team performance overview.</p>
-      </div>
+      <PageHeader title="Reports" description="Ticket analytics and team performance overview." />
+      
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <StatCard label="Total Tickets" value={totalTickets} icon={BarChart3} />
         <StatCard
           label="Resolution Rate"

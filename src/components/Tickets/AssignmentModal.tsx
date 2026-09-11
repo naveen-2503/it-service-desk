@@ -24,14 +24,14 @@ export default function AssignmentModal({ currentAgentId, agents, onAssign, onCl
 
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-sm p-6">
+      <div className="bg-surface rounded-lg shadow-lg w-full max-w-sm p-6">
         <h2 className="font-semibold text-lg mb-4">Assign Ticket</h2>
 
-        <label className="block text-sm font-medium text-gray-700 mb-1">Support Agent</label>
+        <label className="block text-sm font-medium text-ink mb-1">Support Agent</label>
         <select
           value={selected}
           onChange={(e) => setSelected(e.target.value)}
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm mb-4"
+          className="w-full border border-border rounded px-3 py-2 text-sm mb-4 bg-surface text-ink"
         >
           <option value="">Unassigned</option>
           {agents.map((a) => (
@@ -42,7 +42,7 @@ export default function AssignmentModal({ currentAgentId, agents, onAssign, onCl
         <div className="flex gap-2 justify-end">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded text-sm font-medium border border-gray-300 hover:bg-gray-50"
+            className="px-4 py-2 rounded text-sm font-medium border border-border hover:bg-surface-sunken"
           >
             Cancel
           </button>

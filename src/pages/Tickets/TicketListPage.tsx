@@ -7,6 +7,7 @@ import { useLookups } from '../../hooks/useLookups'
 import Badge from '../../components/common/Badge'
 import { statusTone, priorityTone } from '../../utils/ticketDisplay'
 import type { TicketStatus, TicketPriority } from '../../types/ticket'
+import PageHeader from '../../components/common/PageHeader'
 
 const PAGE_SIZE = 5
 const ALL_STATUSES: TicketStatus[] = ['Open', 'Assigned', 'In Progress', 'Pending', 'Resolved', 'Closed', 'Cancelled']
@@ -15,7 +16,7 @@ const ALL_PRIORITIES: TicketPriority[] = ['Low', 'Medium', 'High', 'Critical']
 type SortOption = 'newest' | 'oldest' | 'priority' | 'updated'
 
 const selectClass =
-  'border border-border rounded-lg px-3 py-2 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-brand-500'
+ 'border border-border rounded-lg px-3 py-2 text-sm text-ink bg-surface focus:outline-none focus:ring-2 focus:ring-brand-500'
 
 export default function TicketListPage() {
   const { user } = useAuth()
@@ -65,20 +66,23 @@ export default function TicketListPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-5">
-        <h1 className="text-2xl font-bold text-ink">{user.role === 'Employee' ? 'My Tickets' : 'Tickets'}</h1>
-        {user.role === 'Employee' && (
-          <button
-            onClick={() => navigate('/tickets/new')}
-            className="flex items-center gap-1.5 bg-brand-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-brand-700 transition"
-          >
-            <Plus className="h-4 w-4" />
-            Create Ticket
-          </button>
-        )}
-      </div>
+      <PageHeader
+  title={user.role === 'Employee' ? 'My Tickets' : 'Tickets'}
+  description="Track and manage support tickets."
+  action={
+    user.role === 'Employee' ? (
+      <button
+        onClick={() => navigate('/tickets/new')}
+        className="flex items-center gap-1.5 bg-brand-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-brand-700 transition"
+      >
+        <Plus className="h-4 w-4" />
+        Create Ticket
+      </button>
+    ) : undefined
+  }
+/>
 
-      <div className="bg-white rounded-xl shadow-sm border border-border p-4 mb-4 flex flex-wrap gap-3">
+      <div className="bg-surface rounded-xl shadow-sm border border-border p-4 mb-4 flex flex-wrap gap-3">
         <div className="relative flex-1 min-w-[220px]">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-faint" />
           <input
@@ -113,11 +117,11 @@ export default function TicketListPage() {
       ) : loading || lookupsLoading ? (
         <p className="text-ink-muted">Loading tickets...</p>
       ) : pageItems.length === 0 ? (
-        <div className="bg-white rounded-xl shadow-sm border border-border p-10 text-center text-ink-muted">
+        <div className="bg-surface rounded-xl shadow-sm border border-border p-10 text-center text-ink-muted">
           No tickets found.
         </div>
       ) : (
-        <div className="bg-white rounded-xl shadow-sm border border-border overflow-x-auto">
+        <div className="bg-surface rounded-xl shadow-sm border border-border overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-surface-sunken border-b border-border text-left text-ink-muted">
               <tr>

@@ -11,7 +11,7 @@ interface ConfirmDialogProps {
 export default function ConfirmDialog({ title, message, confirmLabel = 'Delete', onConfirm, onCancel }: ConfirmDialogProps) {
   return (
     <div className="fixed inset-0 bg-ink/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-xl w-full max-w-sm p-6">
+      <div className="bg-surface rounded-xl shadow-xl w-full max-w-sm p-6">
         <div className="h-11 w-11 rounded-full bg-red-50 flex items-center justify-center mb-4">
           <AlertTriangle className="h-5 w-5 text-red-600" />
         </div>

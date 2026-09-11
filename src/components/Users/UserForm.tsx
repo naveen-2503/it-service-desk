@@ -60,7 +60,7 @@ export default function UserForm({ initial, isEdit, onSubmit, onCancel }: UserFo
           type="text"
           value={form.fullName}
           onChange={(e) => update('fullName', e.target.value)}
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+          className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
         />
       </FormField>
 
@@ -70,7 +70,7 @@ export default function UserForm({ initial, isEdit, onSubmit, onCancel }: UserFo
           value={form.email}
           onChange={(e) => update('email', e.target.value)}
           disabled={isEdit}
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm disabled:bg-gray-100"
+          className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
         />
       </FormField>
 
@@ -79,7 +79,7 @@ export default function UserForm({ initial, isEdit, onSubmit, onCancel }: UserFo
           type="text"
           value={form.phone}
           onChange={(e) => update('phone', e.target.value)}
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+          className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
         />
       </FormField>
 
@@ -88,7 +88,7 @@ export default function UserForm({ initial, isEdit, onSubmit, onCancel }: UserFo
           type="text"
           value={form.department}
           onChange={(e) => update('department', e.target.value)}
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+          className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
         />
       </FormField>
 
@@ -96,7 +96,7 @@ export default function UserForm({ initial, isEdit, onSubmit, onCancel }: UserFo
         <select
           value={form.role}
           onChange={(e) => update('role', e.target.value as UserRole)}
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+          className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
         >
           <option value="Admin">Admin</option>
           <option value="Support Agent">Support Agent</option>
@@ -110,7 +110,7 @@ export default function UserForm({ initial, isEdit, onSubmit, onCancel }: UserFo
             type="password"
             value={form.password}
             onChange={(e) => update('password', e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           />
         </FormField>
       )}
@@ -126,11 +126,11 @@ export default function UserForm({ initial, isEdit, onSubmit, onCancel }: UserFo
         <button
           type="button"
           onClick={onCancel}
-          className="px-5 py-2 rounded text-sm font-medium border border-gray-300 hover:bg-gray-50"
+          className="px-5 py-2 rounded text-sm font-medium border border-border hover:bg-surface-sunken"
         >
           Cancel
         </button>
       </div>
     </form>
   )
-}
+} 

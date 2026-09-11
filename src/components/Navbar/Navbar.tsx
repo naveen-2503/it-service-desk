@@ -1,5 +1,7 @@
 import { LogOut } from 'lucide-react'
 import { useAuth } from '../../hooks/useAuth'
+import { useTheme } from '../../hooks/useTheme'
+import { Moon, Sun } from 'lucide-react';
 
 function initials(name: string) {
   return name.split(' ').map((n) => n[0]).join('').slice(0, 2).toUpperCase()
@@ -7,9 +9,10 @@ function initials(name: string) {
 
 export default function Navbar() {
   const { user, logout } = useAuth()
+  const { theme, toggleTheme } = useTheme()
 
   return (
-    <header className="h-16 bg-white border-b border-border flex items-center justify-between px-6">
+    <header className="h-16 bg-surface border-b border-border flex items-center justify-between px-6">
       <div className="text-sm text-ink-muted">
         {user?.department} <span className="mx-1.5 text-ink-faint">·</span> {user?.role}
       </div>
@@ -20,6 +23,13 @@ export default function Navbar() {
           </div>
           <span className="text-sm font-medium text-ink">{user?.fullName}</span>
         </div>
+        <button
+  onClick={toggleTheme}
+  aria-label="Toggle theme"
+  className="h-9 w-9 flex items-center justify-center rounded-lg text-ink-muted hover:bg-surface-sunken transition"
+>
+  {theme === 'light' ? <Moon className="h-4.5 w-4.5" /> : <Sun className="h-4.5 w-4.5" />}
+</button>
         <button
           onClick={logout}
           className="flex items-center gap-1.5 text-sm text-ink-muted hover:text-red-600 font-medium transition"

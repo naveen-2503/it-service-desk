@@ -7,6 +7,7 @@ import UserForm from '../../components/Users/UserForm'
 import type { User } from '../../types/user'
 import type { UserFormInput } from '../../utils/userValidation'
 import { useToast } from '../../hooks/useToast'
+import PageHeader from '../../components/common/PageHeader'
 
 export default function UserManagementPage() {
   const [users, setUsers] = useState<User[]>([])
@@ -68,20 +69,23 @@ async function handleDelete() {
 
    return (
     <div>
-      <div className="flex items-center justify-between mb-5">
-        <h1 className="text-2xl font-bold text-ink">User Management</h1>
-        <button
-          onClick={() => setShowAddModal(true)}
-          className="bg-brand-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-brand-700 transition"
-        >
-          + Add User
-        </button>
-      </div>
+      <PageHeader
+  title="User Management"
+  description="Manage accounts, roles, and access."
+  action={
+    <button
+      onClick={() => setShowAddModal(true)}
+      className="bg-brand-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-brand-700 transition"
+    >
+      + Add User
+    </button>
+  }
+/>
 
       {loading ? (
         <p className="text-ink-muted">Loading users...</p>
       ) : (
-        <div className="bg-white rounded-xl shadow-sm border border-border overflow-x-auto">
+        <div className="bg-surface rounded-xl shadow-sm border border-border overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-surface-sunken border-b border-border text-left text-ink-muted">
               <tr>

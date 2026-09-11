@@ -62,7 +62,7 @@ export default function CreateTicketPage() {
     <div className="max-w-2xl">
       <h1 className="text-2xl font-bold mb-6">Create Ticket</h1>
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 space-y-4">
+      <form onSubmit={handleSubmit} className="bg-surface rounded-lg shadow-sm border border-border p-6 space-y-4">
         {submitError && (
           <div className="bg-red-50 text-red-700 text-sm px-3 py-2 rounded border border-red-200">
             {submitError}
@@ -74,7 +74,7 @@ export default function CreateTicketPage() {
             type="text"
             value={form.subject}
             onChange={(e) => update('subject', e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
             placeholder="Brief summary of the issue"
           />
         </FormField>
@@ -84,7 +84,7 @@ export default function CreateTicketPage() {
             value={form.description}
             onChange={(e) => update('description', e.target.value)}
             rows={4}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
             placeholder="Provide as much detail as possible"
           />
         </FormField>
@@ -93,7 +93,7 @@ export default function CreateTicketPage() {
           <select
             value={form.category}
             onChange={(e) => update('category', e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           >
             <option value="">Select a category</option>
             {categories.map((c) => (
@@ -106,7 +106,7 @@ export default function CreateTicketPage() {
           <select
             value={form.priority}
             onChange={(e) => update('priority', e.target.value as TicketPriority)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           >
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
@@ -119,7 +119,7 @@ export default function CreateTicketPage() {
           <select
             value={form.preferredContactMethod}
             onChange={(e) => update('preferredContactMethod', e.target.value as ContactMethod)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border border-border rounded px-3 py-2 text-sm bg-surface text-ink"
           >
             <option value="Email">Email</option>
             <option value="Phone">Phone</option>
@@ -138,7 +138,7 @@ export default function CreateTicketPage() {
           <button
             type="button"
             onClick={() => navigate('/tickets')}
-            className="px-5 py-2 rounded text-sm font-medium border border-gray-300 hover:bg-gray-50"
+            className="px-5 py-2 rounded text-sm font-medium border border-border hover:bg-surface-sunken"
           >
             Cancel
           </button>

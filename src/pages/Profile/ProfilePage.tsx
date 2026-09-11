@@ -4,6 +4,7 @@ import { useAuth } from '../../hooks/useAuth'
 import { updateUser } from '../../services/userService'
 import FormField from '../../components/common/FormField'
 import { useToast } from '../../hooks/useToast'
+import PageHeader from '../../components/common/PageHeader'
 
 function initials(name: string) {
   return name.split(' ').map((n) => n[0]).join('').slice(0, 2).toUpperCase()
@@ -35,9 +36,9 @@ export default function ProfilePage() {
 
   return (
     <div className="max-w-2xl">
-      <h1 className="text-2xl font-bold text-ink mb-6">My Profile</h1>
+      <PageHeader title="My Profile" description="Manage your personal information." />
 
-      <div className="bg-white rounded-xl shadow-sm border border-border p-6">
+      <div className="bg-surface rounded-xl shadow-sm border border-border p-6">
         <div className="flex items-center gap-4 mb-6 pb-6 border-b border-border">
           <div className="h-16 w-16 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center text-xl font-semibold">
             {initials(user.fullName)}
